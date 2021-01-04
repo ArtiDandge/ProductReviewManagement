@@ -50,6 +50,10 @@ namespace ProductReviewManagement
             management.RetrieveCountOfRecords(productReviewList);
             management.RetrieveProductIDAndReviewFromList(productReviewList);
             management.DisplayUnskippedRecords(productReviewList);
+
+            Console.WriteLine("\n*****************************DataTable Operations*************************");
+            ProductReviewDataTable reviewDataTable = new ProductReviewDataTable();
+            reviewDataTable.CreateDataBleAndAddDefaultValues();
         }
     }
 }
