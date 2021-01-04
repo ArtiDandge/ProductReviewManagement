@@ -21,7 +21,7 @@ namespace ProductReviewManagement
                 new ProductReview(){ ProductID = 9, UserID = 9, Rating = 10, Review = "Nice", isLike = true},
                 new ProductReview(){ ProductID = 10, UserID = 10, Rating = 4.7, Review = "Good", isLike=true },
                 new ProductReview(){ ProductID = 11, UserID = 11, Rating = 5, Review = "Good", isLike = true},
-                new ProductReview(){ ProductID = 12, UserID = 12, Rating = 5.6, Review = "Nice", isLike = true},
+                new ProductReview(){ ProductID = 12, UserID = 12, Rating = 5.6, Review = "Good", isLike = true},
                 new ProductReview(){ ProductID = 13, UserID = 13, Rating = 4, Review = "Good", isLike = true},
                 new ProductReview(){ ProductID = 14, UserID = 14, Rating = 2, Review = "Not Good", isLike = false},
                 new ProductReview(){ ProductID = 15, UserID = 15, Rating = 5, Review = "Good", isLike = true},
@@ -31,10 +31,10 @@ namespace ProductReviewManagement
                 new ProductReview(){ ProductID = 19, UserID = 19, Rating = 10, Review = "Nice", isLike = true},
                 new ProductReview(){ ProductID = 20, UserID = 20, Rating = 5, Review = "Good", isLike=true },
                 new ProductReview(){ ProductID = 21, UserID = 21, Rating = 5, Review = "Good", isLike = true},
-                new ProductReview(){ ProductID = 22, UserID = 22, Rating = 1.3, Review = "Not Good", isLike = true},
+                new ProductReview(){ ProductID = 22, UserID = 22, Rating = 1.3, Review = "Not Good", isLike = false},
                 new ProductReview(){ ProductID = 23, UserID = 23, Rating = 4, Review = "Good", isLike = true},
                 new ProductReview(){ ProductID = 24, UserID = 24, Rating = 2, Review = "Not Good", isLike = false},
-                new ProductReview(){ ProductID = 25, UserID = 25, Rating = 5, Review = "Good", isLike = true},
+                new ProductReview(){ ProductID = 25, UserID = 25, Rating = 9, Review = "Nice", isLike = true},
             };
 
             foreach (var list in productReviewList)
