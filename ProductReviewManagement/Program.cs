@@ -49,6 +49,7 @@ namespace ProductReviewManagement
             management.SelectedRecords(productReviewList);
             management.RetrieveCountOfRecords(productReviewList);
             management.RetrieveProductIDAndReviewFromList(productReviewList);
+            management.DisplayUnskippedRecords(productReviewList);
         }
     }
 }

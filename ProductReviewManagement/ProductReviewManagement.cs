@@ -67,6 +67,18 @@ namespace ProductReviewManagement
         }
 
         /// <summary>
+        /// Method to Skip First Records and Display other records
+        /// </summary>
+        /// <param name="listProductReview">listProductReview</param>
+        public void DisplayUnskippedRecords(List<ProductReview> listProductReview)
+        {
+            var recordData = (from productReviews in listProductReview
+                              select productReviews).Skip(5).ToList();
+            Console.WriteLine("\nFollowing is List of records after skiping first 5 records");
+            DisplayRecords(recordData);
+        }
+
+        /// <summary>
         /// Method to Display records from list
         /// </summary>
         /// <param name="records">records of list</param>
