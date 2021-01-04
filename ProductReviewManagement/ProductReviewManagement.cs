@@ -36,6 +36,20 @@ namespace ProductReviewManagement
         }
 
         /// <summary>
+        /// Retrieve count of review present fro each ProductID using GroupBy operator
+        /// </summary>
+        /// <param name="listProductReview"></param>
+        public void RetrieveOfRecords(List<ProductReview> listProductReview)
+        {
+            var recordData = listProductReview.GroupBy(x => x.ProductID).Select(x => new { ProductID = x.Key, Count = x.Count() });
+            Console.WriteLine("\nResult for Records Grouped By ProductID");
+            foreach (var list in recordData)
+            {
+                Console.WriteLine(list.ProductID + "-----" + list.Count);
+            }
+        }
+
+        /// <summary>
         /// Method to Display records from list
         /// </summary>
         /// <param name="records">records of list</param>
