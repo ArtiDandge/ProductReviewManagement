@@ -17,7 +17,21 @@ namespace ProductReviewManagement
             var recordData = (from productReviews in listProductReview
                               orderby productReviews.Rating descending
                               select productReviews).Take(3).ToList();
-            Console.WriteLine("Following are the records with top rating");
+            Console.WriteLine("\nFollowing are the records with top rating");
+            DisplayRecords(recordData);
+        }
+
+        /// <summary>
+        /// Method to retrieve all records from list who's rating are greater that 3 and Product ID 1, 4 and 9
+        /// </summary>
+        /// <param name="listProductReview"></param>
+        public void SelectedRecords(List<ProductReview> listProductReview)
+        {
+            var recordData = (from productReviews in listProductReview
+                              where ((productReviews.ProductID == 1 || productReviews.ProductID == 4 || productReviews.ProductID == 9)
+                              && productReviews.Rating > 3)
+                              select productReviews).ToList();
+            Console.WriteLine("\nFollowing are the records with rating greater that 3 among Product ID 1, 4 and 9");
             DisplayRecords(recordData);
         }
 
@@ -33,6 +47,7 @@ namespace ProductReviewManagement
                 Console.Write("\nProductID " + list.ProductID + "\nUserID " + list.UserID + "\nRating " + list.Rating + "\nReview " + list.Review + "\nisLike " + list.isLike);
                 Console.WriteLine("\n-----------------");
             }
+            Console.WriteLine("\n******************************************************");
         }
     }
 }
