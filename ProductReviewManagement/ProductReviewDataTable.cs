@@ -11,7 +11,7 @@ namespace ProductReviewManagement
         /// <summary>
         /// Method To Create Data Table and add default values for it 
         /// </summary>
-        public void CreateDataBleAndAddDefaultValues()
+        public DataTable CreateDataBleAndAddDefaultValues()
         {
             DataTable table = new DataTable();
             table.Columns.AddRange( new[]
@@ -48,15 +48,19 @@ namespace ProductReviewManagement
             table.Rows.Add(23, 24, 2, "Not Good", false);
             table.Rows.Add(24, 24, 9, "Nice", true);
             table.Rows.Add(25, 25, 7, "Nice", true);
-            Console.WriteLine("Following is list of Records who's isLike value is 'true'");
-            DisplayDataTableRecords(table);
+            return table;
         }
    
-        public void DisplayDataTableRecords(DataTable table)
+        /// <summary>
+        /// Method To Display DataTable records whose isLike values is true
+        /// </summary>
+        /// <param name="table"></param>
+        public void DisplayDataTableRecordsWithIsLikeValueTrue(DataTable table)
         {
             var records = table.Rows.Cast<DataRow>()
                           .Where(x => x["isLike"].Equals(true));
-            foreach (DataRow row in records)
+            Console.WriteLine("\nList Of records whose isLike value is True");
+            foreach (var row in records)
             {
                 Console.WriteLine("\n-----------------");
                 Console.Write("\nProductID : " + row.Field<int>("ProductID")+" "+ "\nUserID : " + row.Field<int>("UserID") + " "+ "\nRating : " + row.Field<float>("Rating") + " "+ "\nReview : " + row.Field<string>("Review") + " "+ "\nisLike : "+ row.Field<bool>("isLike") + " ");

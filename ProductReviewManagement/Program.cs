@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace ProductReviewManagement
 {
@@ -53,7 +54,8 @@ namespace ProductReviewManagement
 
             Console.WriteLine("\n*****************************DataTable Operations*************************");
             ProductReviewDataTable reviewDataTable = new ProductReviewDataTable();
-            reviewDataTable.CreateDataBleAndAddDefaultValues();
+            DataTable table = reviewDataTable.CreateDataBleAndAddDefaultValues();
+            reviewDataTable.DisplayDataTableRecordsWithIsLikeValueTrue(table);
         }
     }
 }
