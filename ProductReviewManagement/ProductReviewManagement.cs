@@ -67,7 +67,7 @@ namespace ProductReviewManagement
         }
 
         /// <summary>
-        /// Method to Skip First Records and Display other records
+        /// Method to Skip First 5 Records and Display other records
         /// </summary>
         /// <param name="listProductReview">listProductReview</param>
         public void DisplayUnskippedRecords(List<ProductReview> listProductReview)
