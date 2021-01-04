@@ -27,22 +27,22 @@ namespace ProductReviewManagement
             table.Rows.Add(2, 2, 8, "Nice", true);
             table.Rows.Add(3, 3, 4, "Good", true);
             table.Rows.Add(4, 4, 1, "Not Good", false);
-            table.Rows.Add(5, 5, 5, "Good", true);
+            table.Rows.Add(5, 10, 5, "Good", true);
             table.Rows.Add(6, 6, 5.4, "Good", true);
             table.Rows.Add(7, 7, 8, "Nice", true);
-            table.Rows.Add(8, 8, 7, "Good", true);
-            table.Rows.Add(9, 9, 10, "Nice", true);
+            table.Rows.Add(8, 10, 7, "Good", true);
+            table.Rows.Add(9, 10, 8.9, "Nice", true);
             table.Rows.Add(10, 10, 4.7, "Good", true);
             table.Rows.Add(11, 12, 5.6, "Good", true);
-            table.Rows.Add(12, 13, 4, "Good", true);
+            table.Rows.Add(12, 10, 4, "Good", true);
             table.Rows.Add(13, 14, 2, "Not Good", false);
             table.Rows.Add(14, 15, 5, "Good", true);
             table.Rows.Add(15, 16, 2.5, "Good", true);
             table.Rows.Add(15, 17, 9, "Nice", true);
             table.Rows.Add(17, 18, 7, "Good", true);
-            table.Rows.Add(17, 19, 10, "Nice", true);
+            table.Rows.Add(17, 10, 10, "Nice", true);
             table.Rows.Add(19, 20, 5, "Good", true);
-            table.Rows.Add(20, 21, 5, "Good", true);
+            table.Rows.Add(20, 10, 5, "Good", true);
             table.Rows.Add(20, 22, 1.3, "Not Good", false);
             table.Rows.Add(22, 23, 4, "Good", true);
             table.Rows.Add(22, 24, 2, "Not Good", false);
@@ -99,6 +99,24 @@ namespace ProductReviewManagement
             var records = table.Rows.Cast<DataRow>()
                           .Where(x => x["Review"].Equals("Nice"));
             Console.WriteLine("\nList Of Products whose Review is Nice");
+            foreach (var row in records)
+            {
+                Console.WriteLine("\n-----------------");
+                Console.Write("\nProductID : " + row.Field<int>("ProductID") + " " + "\nUserID : " + row.Field<int>("UserID") + " " + "\nRating : " + row.Field<float>("Rating") + " " + "\nReview : " + row.Field<string>("Review") + " " + "\nisLike : " + row.Field<bool>("isLike") + " ");
+                Console.WriteLine("\n-----------------");
+            }
+        }
+
+        /// <summary>
+        /// Method To Retrieve DataTable records who's UserID is 10, order by rating
+        /// </summary>
+        /// <param name="table"></param>
+        public void RetrievRecordsOfPerticularUserID(DataTable table)
+        {
+            var records = table.Rows.Cast<DataRow>()
+                          .OrderBy(x => x.Field<float>("Rating"))
+                          .Where(x => x["UserID"].Equals(10));
+            Console.WriteLine("\nList Of Products whose UserID is 10");
             foreach (var row in records)
             {
                 Console.WriteLine("\n-----------------");

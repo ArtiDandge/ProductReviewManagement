@@ -58,6 +58,7 @@ namespace ProductReviewManagement
             reviewDataTable.DisplayDataTableRecordsWithIsLikeValueTrue(table);
             reviewDataTable.FindAverageRatingOfEachProductID(table);
             reviewDataTable.RetrievRecordsWhoseReviewIsNice(table);
+            reviewDataTable.RetrievRecordsOfPerticularUserID(table);
         }
     }
 }
