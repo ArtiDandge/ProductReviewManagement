@@ -16,7 +16,7 @@ namespace ProductReviewManagement
                 new ProductReview(){ ProductID = 4, UserID = 4, Rating = 1, Review = "Not Good", isLike = false},
                 new ProductReview(){ ProductID = 5, UserID = 5, Rating = 5, Review = "Good", isLike = true},
                 new ProductReview(){ ProductID = 6, UserID = 6, Rating = 5, Review = "Good", isLike = true},
-                new ProductReview(){ ProductID = 7, UserID = 7, Rating = 9, Review = "Nice", isLike = true},
+                new ProductReview(){ ProductID = 7, UserID = 7, Rating = 8, Review = "Nice", isLike = true},
                 new ProductReview(){ ProductID = 8, UserID = 8, Rating = 7, Review = "Good", isLike = true},
                 new ProductReview(){ ProductID = 9, UserID = 9, Rating = 10, Review = "Nice", isLike = true},
                 new ProductReview(){ ProductID = 10, UserID = 10, Rating = 4.7, Review = "Good", isLike=true },
@@ -43,6 +43,9 @@ namespace ProductReviewManagement
                 Console.Write("\nProductID " + list.ProductID + "\nUserID " + list.UserID + "\nRating " + list.Rating + "\nReview " + list.Review + "\nisLike " + list.isLike);
                 Console.WriteLine("\n-----------------");
             }
+
+            ProductReviewManagement management = new ProductReviewManagement();
+            management.TopRecords(productReviewList);
         }
     }
 }
