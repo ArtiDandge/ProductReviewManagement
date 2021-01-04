@@ -56,6 +56,7 @@ namespace ProductReviewManagement
             ProductReviewDataTable reviewDataTable = new ProductReviewDataTable();
             DataTable table = reviewDataTable.CreateDataBleAndAddDefaultValues();
             reviewDataTable.DisplayDataTableRecordsWithIsLikeValueTrue(table);
+            reviewDataTable.FindAverageRatingOfEachProductID(table);
         }
     }
 }
