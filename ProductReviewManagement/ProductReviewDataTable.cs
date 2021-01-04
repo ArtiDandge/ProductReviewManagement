@@ -89,5 +89,22 @@ namespace ProductReviewManagement
                 Console.WriteLine("\n-----------------");
             }
         }
+
+        /// <summary>
+        /// Method To Retrieve DataTable records who's Review is Nice
+        /// </summary>
+        /// <param name="table"></param>
+        public void RetrievRecordsWhoseReviewIsNice(DataTable table)
+        {
+            var records = table.Rows.Cast<DataRow>()
+                          .Where(x => x["Review"].Equals("Nice"));
+            Console.WriteLine("\nList Of Products whose Review is Nice");
+            foreach (var row in records)
+            {
+                Console.WriteLine("\n-----------------");
+                Console.Write("\nProductID : " + row.Field<int>("ProductID") + " " + "\nUserID : " + row.Field<int>("UserID") + " " + "\nRating : " + row.Field<float>("Rating") + " " + "\nReview : " + row.Field<string>("Review") + " " + "\nisLike : " + row.Field<bool>("isLike") + " ");
+                Console.WriteLine("\n-----------------");
+            }
+        }
     }
 }
